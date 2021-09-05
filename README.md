@@ -6,7 +6,7 @@ Fibonacci Search is a comparison-based technique that uses Fibonacci numbers to 
 ## Why to use Fibonacci Search ?
 While there is already a Logn searching technique available to search elements in an array i.e Binary search ,it can still be found to be costly as Binary search uses division operator to divide the range which can be costly to CPUs when data sets are large in quantity. 
 
-To reduce this cost , Fibonacci Search Liberary comes to play, which does not require heavy operations to divide the ranges , rather uses + or - operators to divide the ranges which proves to be cost effective.
+To reduce this cost , Fibonacci Search Library comes to play, which does not require heavy operations to divide the ranges , rather uses + or - operators to divide the ranges which proves to be cost effective.
 
 ## How does Fibonacci search works ?
 Fibonacci search first finds the smallest Fibonacci number that is greater or equal to the length of the given array. Now we subtract 2 from the fibonacci number we found and use it as an index (If it is valid index). 
