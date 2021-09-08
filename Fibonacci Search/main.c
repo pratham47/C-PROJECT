@@ -48,16 +48,15 @@ int main()
 	int roll_no = 4;
 	int ind = fib_search((void **)sdmn, sizeof(struct student *), &roll_no, roll_no_cmp);
 
-    if(ind>=0)
+        if(ind>=0)
 	{
-	    printf("Roll no. found at index: %d\n",ind);
-	    printf("Details of the student for corresponding number are:\n");
-	    printf("Name of the student : %s\n",sdmn[ind]->name);
-	    printf("Age of the student : %d\n",sdmn[ind]->age);
+	   printf("Roll no. found at index: %d\n",ind);
+	   printf("Details of the student for corresponding number are:\n");
+	   printf("Name of the student : %s\n",sdmn[ind]->name);
+	   printf("Age of the student : %d\n",sdmn[ind]->age);
 	}
-    else
+        else
 	{
-	    printf("Roll no. %d does not exist in the records\n",roll_no);
-
+	   printf("Roll no. %d does not exist in the records\n",roll_no);
 	}
 }
