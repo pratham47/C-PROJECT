@@ -18,7 +18,7 @@ int fib_search(void **arr, int n, void *key, int (*cmp)(void *,void * ))
 	int m = m_2 + m_1; // mth fibonacci number
 
 	while (m < n) // Finding the smallest fibonacci number greater than or equal to the size of array
-    {
+        {
 		m_2 =  m_1;
 		m_1 = m;
 		m = m_2 + m_1;
@@ -49,9 +49,10 @@ int fib_search(void **arr, int n, void *key, int (*cmp)(void *,void * ))
                 }
 	 }
 
-    if(m_1 && ((*cmp)(arr[offset+1],key) == 0)) // comparison of last element of array for the given key
-    {
-      return offset + 1;
-    }
+        if(m_1 && ((*cmp)(arr[offset+1],key) == 0)) // comparison of last element of array for the given key
+        {
+              return offset + 1;
+        }
+	
 	return -1;
 }
