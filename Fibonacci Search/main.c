@@ -1,16 +1,48 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 #include "fib_search.h"
 
-struct student
+struct student // A structure for holding the information for students.
 {
     char name[20];
     int age;
     int roll_no;
 };
 
-int roll_no_cmp(void *a, void *b)
+int int_cmp(void *a, void *b)// Helps in searching for integer values.
+{
+    int *i = (int *)a;
+    int *j = (int *)b;
+
+	if(*i >*j)
+    {
+        return 1;
+    }
+	if(*i < *j)
+    {
+        return -1;
+    }
+	return 0;
+}
+
+
+int float_cmp(void *a, void *b) // Helps in searching for float values.
+{
+    float *i = (float *)a;
+    float *j = (float *)b;
+
+	if(*i >*j)
+    {
+        return 1;
+    }
+	if(*i < *j)
+    {
+        return -1;
+    }
+	return 0;
+}
+
+int roll_no_cmp(void *a, void *b) // comparator for roll_no.(helps in searching according to roll number of the student)
 {
     struct student *i = (struct student *)a;
     int *j = (int *)b;
@@ -46,17 +78,18 @@ int main()
 	sdmn[6] = &s7;
 
 	int roll_no = 4;
-	int ind = fib_search((void **)sdmn, sizeof(struct student *), &roll_no, roll_no_cmp);
-
-        if(ind>=0)
+	int ind = fib_search((void **)sdmn, sizeof(struct student *), &roll_no, roll_no_cmp); /* Call to searching function to scan the given array
+                                                                                            and search for the element you want to find*/
+    if(ind!=-1) // If element is found, we print the information of the student for the searched roll no.
 	{
-	   printf("Roll no. found at index: %d\n",ind);
-	   printf("Details of the student for corresponding number are:\n");
-	   printf("Name of the student : %s\n",sdmn[ind]->name);
-	   printf("Age of the student : %d\n",sdmn[ind]->age);
+	    printf("Roll no. found at index: %d\n",ind);
+	    printf("Details of the student for corresponding number are:\n");
+	    printf("Name of the student : %s\n",sdmn[ind]->name);
+	    printf("Age of the student : %d\n",sdmn[ind]->age);
 	}
-        else
+    else // if element is not present.
 	{
-	   printf("Roll no. %d does not exist in the records\n",roll_no);
+	    printf("Roll no. %d does not exist in the records\n",roll_no);
+
 	}
 }
